@@ -4,10 +4,6 @@ import { Grid, Row, Col } from 'react-bootstrap';
 
 import { about } from '../data/about';
 
-const aboutStyle = {
-    height: '100vh',
-};
-
 export interface AboutData {
     heading: string;
     icon: string;
@@ -19,16 +15,24 @@ export interface AboutData {
 
 export default class About extends React.Component {
 
+    changeColor = () => {
+        if (window.location.pathname === '/about') {
+            document.body.style.backgroundColor = '#1b232e';
+        }
+    }
+
     render(): JSX.Element {
+        this.changeColor();
+
         return(
-            <div style={aboutStyle} className="container">
-                <div className="header">
-                    <h1 className="container">
+            <div className="aboutStyle">
+                <div className="container header">
+                    <h1 style={{marginTop: 0}}>
                         <b className="aboutmeheader"> About Me </b>
                     </h1>
                     <div className="underline"/>
                 </div>
-                <Grid>
+                <Grid style={{marginBottom: '50px'}}>
                     <Row>
                         { about.map((data, index) => {
                                 return (

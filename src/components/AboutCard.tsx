@@ -79,8 +79,7 @@ export default class AboutCard extends React.Component<AboutCardProps, AboutCard
                     </Col>
                     <Col style={{marginLeft: '20px'}} sm={12} md={12} xs={12}>
                         {this.state.displayIcon ? this.renderSkillDiv() : this.renderDetailsDiv()}
-                    </Col>
-                     
+                    </Col> 
                 </Row>
             </div>
         );

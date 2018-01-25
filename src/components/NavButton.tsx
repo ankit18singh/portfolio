@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { scroll } from '../utils/scroll';
+import { Link } from 'react-router-dom';
 
 /* tslint:disable no-any */
 export interface NavButtonState {
     transform: any;
+    showToolTip: boolean;
 }
 
 export default class NavButton extends React.Component {
@@ -30,10 +32,18 @@ export default class NavButton extends React.Component {
         return(
             <div className="navbutton"> 
                 <ul className="nav-ul">
-                    <li className="nav-li navlinkButton"/>
-                    <li className="nav-li navlinkButton-1"/>
-                    <li className="nav-li navlinkButton-2"/>
-                    <li className="nav-li navlinkButton-3"/>
+                    <Link to="/">
+                        <li className="nav-li navlinkButton" />
+                    </Link>
+                    <Link to="/about">
+                        <li className="nav-li navlinkButton-1"/>
+                    </Link>
+                    <Link to="/skills">
+                        <li className="nav-li navlinkButton-2" />
+                    </Link>
+                    <Link to="/contact">
+                        <li className="nav-li navlinkButton-3" />
+                    </Link>
                 </ul>            
             </div>
         );
